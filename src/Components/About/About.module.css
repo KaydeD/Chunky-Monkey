@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+.about {
+  display: flex;
+  align-items: center;
+  padding-left: 300px;
+  gap: 100px;
+  color: white;
+  background-color: #121215;
+  height: 95vh;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.aboutTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;
+  margin-bottom: 20px;
+}
+
+.aboutTitle h1:nth-child(1) {
+  font-family: "Playfair Display", serif;
+  font-size: 46px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.aboutTitle h1:nth-child(2) {
+  font-family: "Playfair Display", serif;
+  font-size: 46px;
+  margin: 0;
+  color: #a1a1aa;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 570px;
+}
+
+.aboutText {
+  font-family: "Geist", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  margin: 0;
+  color: #a1a1aa;
+}
+
+.firstP,
+.secondP {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  max-width: 650px;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: #09090b;
+  width: 292px;
+  height: 142px;
+  border-radius: 20px;
+  padding: 20px;
+  display: grid;
+  flex-direction: column;
+}
+
+.card h3 {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: -50px;
+}
+
+.imageContainer img {
+  width: 600px;
+  height: 600px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 1px solid #353538;
+}
+
+.imageText {
+  position: absolute;
+  bottom: 50px;
+  width: 550px;
+  font-family: "Cursive", sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 22px 28px;
+  color: rgba(255, 255, 255, 0.397);
+}
+
+/* Tablet Landscape & Smaller Desktops (1200px and below) */
+@media (max-width: 1200px) {
+  .about {
+    padding-left: 150px;
+    gap: 60px;
+  }
+
+  .aboutTitle h1 {
+    font-size: 40px !important;
+  }
+
+  .textContainer {
+    width: 500px;
+  }
+
+  .aboutText {
+    font-size: 16px;
+  }
+
+  .card {
+    width: 250px;
+    height: 130px;
+  }
+
+  .card h3 {
+    font-size: 22px;
+  }
+
+  .imageContainer img {
+    width: 500px;
+    height: 500px;
+  }
+
+  .imageText {
+    width: 460px;
+    font-size: 13px;
+    bottom: 40px;
+  }
+}
+
+/* Tablet Portrait (1024px and below) */
+@media (max-width: 1024px) {
+  .about {
+    flex-direction: column;
+    padding: 80px 40px 60px;
+    gap: 50px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .container {
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .aboutTitle {
+    align-items: center;
+    text-align: center;
+  }
+
+  .aboutTitle h1 {
+    font-size: 38px !important;
+  }
+
+  .textContainer {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .aboutText {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .firstP,
+  .secondP {
+    max-width: 100%;
+  }
+
+  .cardContainer {
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+  }
+
+  .imageContainer {
+    margin-left: 0;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .imageContainer img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    aspect-ratio: 1;
+  }
+
+  .imageText {
+    width: calc(100% - 40px);
+    max-width: 460px;
+  }
+}
+
+/* Mobile Landscape & Tablets (768px and below) */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 30px 50px;
+    gap: 40px;
+  }
+
+  .aboutTitle h1 {
+    font-size: 32px !important;
+  }
+
+  .textContainer {
+    max-width: 100%;
+  }
+
+  .aboutText {
+    font-size: 15px;
+  }
+
+  .cardContainer {
+    gap: 15px;
+    max-width: 500px;
+  }
+
+  .card {
+    padding: 18px;
+    min-height: 110px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .imageContainer {
+    max-width: 500px;
+  }
+
+  .imageContainer img {
+    max-width: 450px;
+  }
+
+  .imageText {
+    max-width: 400px;
+    font-size: 12px;
+    padding: 18px 24px;
+    bottom: 30px;
+  }
+}
+
+/* Mobile (640px and below) */
+@media (max-width: 640px) {
+  .about {
+    padding: 50px 20px 40px;
+    gap: 35px;
+  }
+
+  .aboutTitle h1 {
+    font-size: 28px !important;
+  }
+
+  .aboutText {
+    font-size: 14px;
+  }
+
+  .cardContainer {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 400px;
+  }
+
+  .card {
+    padding: 16px;
+    min-height: 100px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .imageContainer {
+    max-width: 100%;
+  }
+
+  .imageContainer img {
+    max-width: 400px;
+  }
+
+  .imageText {
+    max-width: 340px;
+    font-size: 11px;
+    padding: 16px 20px;
+    bottom: 25px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .about {
+    padding: 40px 15px 30px;
+    gap: 30px;
+  }
+
+  .aboutTitle h1 {
+    font-size: 24px !important;
+  }
+
+  .aboutText {
+    font-size: 13px;
+  }
+
+  .cardContainer {
+    max-width: 100%;
+  }
+
+  .card {
+    padding: 14px;
+    min-height: 90px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+
+  .imageContainer img {
+    max-width: 100%;
+    border-radius: 15px;
+  }
+
+  .imageText {
+    max-width: calc(100% - 30px);
+    font-size: 10px;
+    padding: 14px 18px;
+    bottom: 20px;
+  }
+}

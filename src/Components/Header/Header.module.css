@@ -1,0 +1,405 @@
+.header {
+  color: white;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  flex-direction: column;
+  background: radial-gradient(circle at center, #161618 0%, #0c0c0e 70%);
+  height: 100vh;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.commissions {
+  color: #a1a1aa;
+  font-weight: 400;
+  font-size: 12px;
+  background-color: #212123;
+  height: 26px;
+  width: 222px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-family: "Courier New", Courier, monospace;
+  gap: 8px;
+  border: 1px solid #373739;
+}
+
+.commissions::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.headerTitle {
+  font-size: 90px;
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(to bottom, white, gray);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin: 0;
+}
+
+.textContainer {
+  max-width: 750px;
+}
+
+.headerText {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #a1a1aa;
+  text-align: center;
+  margin: 0;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #212123;
+  border: 1px solid #3f3f46;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  height: 38px;
+  width: 195px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.skill:hover {
+  background-color: #27272a;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.skill::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.skill:nth-child(1)::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5z'/%3E%3Cpath d='M2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E");
+}
+
+.skill:nth-child(2)::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Crect x='3' y='3' width='18' height='18' rx='2'/%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'/%3E%3Cpath d='M21 15l-5-5L5 21'/%3E%3C/svg%3E");
+}
+
+.skill:nth-child(3)::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M12 2v20M2 12h20'/%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E");
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.portfolioButton {
+  background-color: white;
+  font-size: 16px;
+  border: none;
+  width: 175px;
+  height: 60px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.contactButton {
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  border: 1px solid #28282a;
+  width: 175px;
+  height: 60px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.arrow {
+  font-size: 30px;
+  color: #a1a1aa;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Tablet Landscape (1024px and below) */
+@media (max-width: 1024px) {
+  .headerTitle {
+    font-size: 70px;
+  }
+
+  .textContainer {
+    max-width: 650px;
+    padding: 0 20px;
+  }
+
+  .headerText {
+    font-size: 20px;
+  }
+
+  .skill {
+    width: 180px;
+    font-size: 13px;
+  }
+
+  .buttons {
+    gap: 15px;
+  }
+
+  .portfolioButton,
+  .contactButton {
+    width: 160px;
+    height: 55px;
+    font-size: 15px;
+  }
+}
+
+/* Tablet Portrait (768px and below) */
+@media (max-width: 768px) {
+  .header {
+    gap: 1.2rem;
+    padding: 10px 15px;
+  }
+
+  .commissions {
+    font-size: 11px;
+    height: 24px;
+    width: 210px;
+  }
+
+  .headerTitle {
+    font-size: 55px;
+  }
+
+  .textContainer {
+    max-width: 550px;
+  }
+
+  .headerText {
+    font-size: 18px;
+  }
+
+  .skills {
+    gap: 0.8rem;
+  }
+
+  .skill {
+    width: 170px;
+    height: 36px;
+    font-size: 12px;
+    padding: 0.65rem 1rem;
+  }
+
+  .buttons {
+    margin-top: 30px;
+    gap: 12px;
+  }
+
+  .portfolioButton,
+  .contactButton {
+    width: 150px;
+    height: 52px;
+    font-size: 14px;
+  }
+
+  .arrow {
+    font-size: 28px;
+    bottom: 30px;
+  }
+}
+
+/* Mobile Landscape & Large Phones (640px and below) */
+@media (max-width: 640px) {
+  .header {
+    gap: 1rem;
+  }
+
+  .commissions {
+    font-size: 10px;
+    height: 22px;
+    width: 200px;
+  }
+
+  .commissions::before {
+    width: 5px;
+    height: 5px;
+  }
+
+  .headerTitle {
+    font-size: 45px;
+  }
+
+  .textContainer {
+    max-width: 480px;
+  }
+
+  .headerText {
+    font-size: 16px;
+  }
+
+  .skills {
+    gap: 0.7rem;
+    padding: 0 10px;
+  }
+
+  .skill {
+    width: 160px;
+    height: 34px;
+    font-size: 11px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .portfolioButton,
+  .contactButton {
+    width: 200px;
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .arrow {
+    font-size: 26px;
+    bottom: 25px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .header {
+    gap: 0.9rem;
+  }
+
+  .commissions {
+    font-size: 9px;
+    height: 20px;
+    width: 180px;
+    gap: 6px;
+  }
+
+  .commissions::before {
+    width: 4px;
+    height: 4px;
+  }
+
+  .headerTitle {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .textContainer {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .headerText {
+    font-size: 14px;
+  }
+
+  .skills {
+    gap: 0.6rem;
+    padding: 0 15px;
+  }
+
+  .skill {
+    width: 145px;
+    height: 32px;
+    font-size: 10px;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .skill::before {
+    width: 0.85rem;
+    height: 0.85rem;
+  }
+
+  .buttons {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .portfolioButton,
+  .contactButton {
+    width: 180px;
+    height: 48px;
+    font-size: 13px;
+  }
+
+  .arrow {
+    font-size: 24px;
+    bottom: 20px;
+  }
+}
+
+/* Extra Small Mobile (375px and below) */
+@media (max-width: 375px) {
+  .headerTitle {
+    font-size: 32px;
+  }
+
+  .headerText {
+    font-size: 13px;
+  }
+
+  .skill {
+    width: 135px;
+    height: 30px;
+    font-size: 9px;
+  }
+
+  .portfolioButton,
+  .contactButton {
+    width: 160px;
+    height: 45px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,541 @@
+.container {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 60px 40px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  letter-spacing: 2px;
+  font-family: Georgia, serif;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  margin: 0;
+  max-width: 600px;
+}
+
+.carouselWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.navButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  padding: 0;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.slideContainer {
+  flex: 1;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+  padding: 40px 30px 30px;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.slideTitle {
+  font-size: 2rem;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.slideDescription {
+  font-size: 1rem;
+  color: #d0d0d0;
+  margin: 0;
+}
+
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.dotActive {
+  background: #ffffff;
+  border-color: #ffffff;
+  transform: scale(1.2);
+}
+
+.scrollHint {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #666666;
+}
+
+.fullscreenModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  line-height: 0;
+  padding: 0;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.fullscreenNavButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 4rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  padding: 0;
+  z-index: 10000;
+}
+
+.fullscreenNavButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.fullscreenContent {
+  flex: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.fullscreenImage {
+  max-width: 100%;
+  max-height: calc(90vh - 150px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.fullscreenInfo {
+  text-align: center;
+  max-width: 800px;
+}
+
+.fullscreenTitle {
+  font-size: 2.5rem;
+  margin: 0 0 10px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.fullscreenDescription {
+  font-size: 1.2rem;
+  color: #d0d0d0;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Tablet Landscape & Smaller Desktops (1024px and below) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 40px 30px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .carouselWrapper {
+    gap: 20px;
+  }
+
+  .navButton {
+    width: 50px;
+    height: 50px;
+    font-size: 2.5rem;
+  }
+
+  .imageWrapper {
+    height: 500px;
+  }
+
+  .slideTitle {
+    font-size: 1.7rem;
+  }
+
+  .fullscreenTitle {
+    font-size: 2rem;
+  }
+
+  .fullscreenDescription {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet Portrait (768px and below) */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .carouselWrapper {
+    gap: 15px;
+  }
+
+  .navButton {
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+  }
+
+  .imageWrapper {
+    height: 400px;
+  }
+
+  .overlay {
+    padding: 30px 20px 20px;
+  }
+
+  .slideTitle {
+    font-size: 1.5rem;
+  }
+
+  .slideDescription {
+    font-size: 0.9rem;
+  }
+
+  .dotsContainer {
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollHint {
+    font-size: 0.65rem;
+    margin-top: 40px;
+  }
+
+  .fullscreenModal {
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .fullscreenNavButton {
+    width: 60px;
+    height: 60px;
+    font-size: 3rem;
+  }
+
+  .fullscreenTitle {
+    font-size: 1.8rem;
+  }
+
+  .fullscreenDescription {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Landscape & Large Phones (640px and below) */
+@media (max-width: 640px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .carouselWrapper {
+    gap: 10px;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+
+  .imageWrapper {
+    height: 300px;
+    border-radius: 8px;
+  }
+
+  .overlay {
+    padding: 20px 15px 15px;
+  }
+
+  .slideTitle {
+    font-size: 1.3rem;
+  }
+
+  .slideDescription {
+    font-size: 0.85rem;
+  }
+
+  .dotsContainer {
+    gap: 8px;
+    margin-top: 25px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollHint {
+    font-size: 0.6rem;
+    margin-top: 30px;
+  }
+
+  .fullscreenModal {
+    gap: 15px;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .closeButton {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .fullscreenNavButton {
+    width: 50px;
+    height: 50px;
+    font-size: 2.5rem;
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .fullscreenNavButton:first-of-type {
+    left: 20px;
+  }
+
+  .fullscreenNavButton:last-of-type {
+    right: 20px;
+  }
+
+  .fullscreenContent {
+    gap: 15px;
+    max-height: 80vh;
+  }
+
+  .fullscreenImage {
+    max-height: calc(80vh - 120px);
+  }
+
+  .fullscreenInfo {
+    padding: 0 15px;
+  }
+
+  .fullscreenTitle {
+    font-size: 1.5rem;
+  }
+
+  .fullscreenDescription {
+    font-size: 0.85rem;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .navButton {
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+  }
+
+  .imageWrapper {
+    height: 250px;
+  }
+
+  .slideTitle {
+    font-size: 1.1rem;
+  }
+
+  .slideDescription {
+    font-size: 0.8rem;
+  }
+
+  .fullscreenNavButton {
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+  }
+
+  .fullscreenTitle {
+    font-size: 1.3rem;
+  }
+
+  .fullscreenDescription {
+    font-size: 0.8rem;
+  }
+}

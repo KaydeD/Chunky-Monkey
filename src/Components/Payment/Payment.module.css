@@ -1,0 +1,523 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+.payment {
+  min-height: 100vh;
+  background-color: #0F0F11;
+  color: #ffffff;
+  padding: 80px 40px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  letter-spacing: 2px;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffffff 0%, #808080 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  margin: 0 auto 60px;
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.card {
+  background-color: #1a1a1c;
+  border: 1px solid #2a2a2c;
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #3a3a3c;
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  background-color: #2a2a2c;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+}
+
+.badge {
+  font-size: 0.7rem;
+  color: #a0a0a0;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 15px;
+  color: #ffffff;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  margin: 0 0 30px;
+  line-height: 1.5;
+  min-height: 48px;
+}
+
+.button {
+  width: 100%;
+  padding: 14px 24px;
+  background-color: #ffffff;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.02);
+}
+
+.trustedSection {
+  background-color: #1a1a1c;
+  border: 1px solid #2a2a2c;
+  border-radius: 20px;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.trustedContent {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.trustedIcon {
+  width: 50px;
+  height: 50px;
+  background-color: #2a2a2c;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trustedIcon svg {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+}
+
+.trustedText h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.trustedText p {
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  gap: 50px;
+  flex-shrink: 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 5px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  color: #a0a0a0;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Tablet Landscape & Smaller Desktops (1200px and below) */
+@media (max-width: 1200px) {
+  .payment {
+    padding: 70px 35px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .cardsContainer {
+    gap: 25px;
+  }
+
+  .card {
+    padding: 35px 25px;
+  }
+
+  .trustedSection {
+    padding: 25px 35px;
+  }
+}
+
+/* Tablet Portrait (1024px and below) */
+@media (max-width: 1024px) {
+  .payment {
+    padding: 60px 30px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto 50px;
+  }
+
+  .card {
+    padding: 30px 25px;
+  }
+
+  .trustedSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .trustedContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats {
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+/* Tablet Portrait (768px and below) */
+@media (max-width: 768px) {
+  .payment {
+    padding: 50px 25px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 50px;
+  }
+
+  .card {
+    padding: 28px 22px;
+  }
+
+  .iconWrapper {
+    width: 55px;
+    height: 55px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+
+  .price {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    min-height: auto;
+  }
+
+  .button {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  .trustedSection {
+    padding: 25px;
+  }
+
+  .trustedText h3 {
+    font-size: 1.2rem;
+  }
+
+  .trustedText p {
+    font-size: 0.9rem;
+  }
+
+  .statNumber {
+    font-size: 2.2rem;
+  }
+
+  .stats {
+    gap: 35px;
+  }
+}
+
+/* Mobile Landscape & Large Phones (640px and below) */
+@media (max-width: 640px) {
+  .payment {
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+  }
+
+  .cardsContainer {
+    gap: 18px;
+  }
+
+  .card {
+    padding: 25px 20px;
+  }
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+  }
+
+  .button {
+    padding: 11px 18px;
+    font-size: 0.9rem;
+  }
+
+  .trustedSection {
+    padding: 22px 20px;
+    gap: 25px;
+  }
+
+  .trustedIcon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .trustedIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .trustedText h3 {
+    font-size: 1.1rem;
+  }
+
+  .trustedText p {
+    font-size: 0.85rem;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+  }
+
+  .statLabel {
+    font-size: 0.6rem;
+  }
+
+  .stats {
+    gap: 30px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .payment {
+    padding: 35px 15px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .card {
+    padding: 22px 18px;
+  }
+
+  .iconWrapper {
+    width: 45px;
+    height: 45px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .button {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .trustedSection {
+    padding: 20px 18px;
+  }
+
+  .trustedIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .trustedIcon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .trustedText h3 {
+    font-size: 1rem;
+  }
+
+  .trustedText p {
+    font-size: 0.8rem;
+  }
+
+  .statNumber {
+    font-size: 1.8rem;
+  }
+
+  .stats {
+    gap: 25px;
+  }
+}
+
+/* Extra Small Mobile (375px and below) */
+@media (max-width: 375px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .statNumber {
+    font-size: 1.6rem;
+  }
+
+  .statLabel {
+    font-size: 0.55rem;
+  }
+}

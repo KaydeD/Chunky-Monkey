@@ -1,0 +1,436 @@
+.container {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 60px 40px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 40px;
+  letter-spacing: 2px;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  margin-bottom: 30px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d0d0d0;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.button {
+  width: 100%;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.success {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  border-radius: 8px;
+  color: #4ade80;
+  text-align: center;
+}
+
+.error {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  border-radius: 8px;
+  color: #f87171;
+  text-align: center;
+}
+
+.workList {
+  margin-top: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.listTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.loadingText,
+.emptyText {
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 20px;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  margin: 0 0 15px;
+  line-height: 1.5;
+}
+
+.deleteButton {
+  width: 100%;
+  padding: 10px;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  border-radius: 8px;
+  color: #f87171;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deleteButton:hover {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: rgba(239, 68, 68, 0.7);
+}
+
+/* Tablet Landscape (1024px and below) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 50px 30px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .form {
+    max-width: 550px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .listTitle {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tablet Portrait (768px and below) */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 25px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .form {
+    max-width: 100%;
+  }
+
+  .label {
+    font-size: 0.95rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 13px;
+    font-size: 15px;
+  }
+
+  .button {
+    padding: 13px 25px;
+    font-size: 15px;
+  }
+
+  .workList {
+    margin-top: 50px;
+  }
+
+  .listTitle {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .cardContent {
+    padding: 18px;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile Landscape & Large Phones (640px and below) */
+@media (max-width: 640px) {
+  .container {
+    padding: 35px 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .formGroup {
+    margin-bottom: 25px;
+  }
+
+  .label {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .input,
+  .textarea {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .textarea {
+    min-height: 100px;
+  }
+
+  .button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .success,
+  .error {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .workList {
+    margin-top: 45px;
+  }
+
+  .listTitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .loadingText,
+  .emptyText {
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .cardImage {
+    height: 180px;
+  }
+
+  .cardContent {
+    padding: 16px;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+  }
+
+  .deleteButton {
+    padding: 9px;
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .formGroup {
+    margin-bottom: 20px;
+  }
+
+  .label {
+    font-size: 0.85rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 11px;
+    font-size: 13px;
+  }
+
+  .textarea {
+    min-height: 90px;
+  }
+
+  .button {
+    padding: 11px 18px;
+    font-size: 13px;
+  }
+
+  .workList {
+    margin-top: 40px;
+  }
+
+  .listTitle {
+    font-size: 1.4rem;
+  }
+
+  .loadingText,
+  .emptyText {
+    font-size: 0.95rem;
+  }
+
+  .grid {
+    gap: 15px;
+  }
+
+  .cardImage {
+    height: 160px;
+  }
+
+  .cardContent {
+    padding: 14px;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+
+  .deleteButton {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+/* Extra Small Mobile (375px and below) */
+@media (max-width: 375px) {
+  .container {
+    padding: 25px 12px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .listTitle {
+    font-size: 1.3rem;
+  }
+
+  .cardImage {
+    height: 150px;
+  }
+}
